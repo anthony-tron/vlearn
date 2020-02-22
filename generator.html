@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Flashcard generator | vlearn</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/generator.css"/>
+
+        <meta name="description" content="Write and export flashcards to PNG."/>
+        <meta name="keywords" content="flashcards, generator, images"/>
+    </head>
+
+    <body>
+        <nav>
+            <p class="home-link"><a href="index.html">vlearn</a></p>
+
+            <p class="sub">Games</p>
+            <ul>
+                <li>incoming...</li>
+            </ul>
+
+            <p class="sub">Tools</p>
+            <ul>
+                <li><strong>Flashcard generator</strong></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Multi Flashcard Generator</h1>
+            
+            <div>
+                <h2>Flashcard content</h2>
+                <div class="flashcard-info">
+                    <table id="entries" class="entries">
+                        <thead>
+                            <tr>
+                                <th class="entry-cell">Kanji</th>
+                                <th class="entry-cell">Reading</th>
+                                <th class="custom-color-cell">Custom color?</th>
+                                <th>Color</th>
+                            </tr>
+                        </thead>
+
+                        <tr>
+                            <td><input id="last" onchange="addRow()" placeholder="Kanji" value="" type="text"></td>
+                            <td><input placeholder="Reading" value="" type="text"></td>
+
+                            <td><input onclick="hideColorPicker(event)" type="checkbox"></td>
+
+                            <td><input class="invisible" type="color"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="output-settings">
+                <h2>Output settings</h2>
+
+                <table>
+                    <tr>
+                        <td><label for="width-selector">Width</label></td>
+                        <td><input name="width-selector" id="width-selector" value="476" min="48" max="10000" type="number"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="height-selector">Height</label></td>
+                        <td><input name="height-selector" id="height-selector" value="556" min="48" max="10000" type="number"/></td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="color-table-div">
+                <h2>Color table</h2>
+                <p>Random colors to choose from.</p>
+                <button class="add-button" onclick="addColor()">Add a color</button>
+
+                <table id="color-table">
+                    <tr>
+                        <td><input type="color" value="#f1bc31"/></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="output">
+                <h2>Output</h2>
+                <button onclick="generate()">Generate</button>
+                <button onclick="downloadAll('canvas-area')">Download all</button>
+
+                <p id="info-giver">No flashcards generated yet.</p>
+
+                <div id="canvas-area"></div>
+            </div>
+        </main> 
+
+        <script src="js/filesaver.js"></script>
+        <script src="js/jszip.js"></script>
+        <script src="js/download.js"></script>
+        <script src="js/list-generator.js"></script>
+        <script src="js/events.js"></script>
+    </body>
+</html>

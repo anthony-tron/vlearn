@@ -1,0 +1,158 @@
+@font-face {
+    font-family: comfortaa;
+    src: url("../font/Comfortaa-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: comfortaa;
+    src: url("../font/Comfortaa-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: comfortaa;
+    src: url("../font/Comfortaa-Light.ttf");
+    font-weight: lighter;
+}
+
+body {
+    background-color: #eee;
+    font-family: comfortaa, sans-serif;
+}
+
+nav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 8px;
+    margin: 16px;
+    border-radius: 16px;
+
+    background-color: #fcfcfc;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #008295;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+    background-color: #fcfcfc;
+    border-radius: 24px;
+}
+
+main, nav {
+    display: block;
+}
+
+
+main > div {
+    margin: 32px 2px;
+}
+
+h1 {
+    color: #008295;
+}
+
+h2 {
+    color: #334;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+
+
+.home-link {
+    font-size: 24px;
+    text-align: center;
+}
+
+.sub {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #009fb7;
+    color: white;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color;
+    transition-duration: 100ms;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #fcfcfc;
+    background: #008aa0;
+}
+
+button:active {
+    background-color: #58cee0;
+}
+
+.add-button {
+    background-color: #696773;
+}
+
+.delete-button {
+    border-radius: 100%;
+    background-color: #696773;
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    vertical-align: center;
+    text-align: center;
+}
+
+:focus {outline: none;}
+::-moz-focus-inner {border:0;}
+
+
+
+input:focus {
+    border-color: #e4c25b;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+input[type="color"] {
+    background: none;
+    border: none;
+    width: 48px;
+    height: 24px;
+}
+
+input[type="color"]:hover {
+    cursor: pointer;
+}
+
+@media(max-width: 1400px) {
+    nav {
+        position: static;
+    }
+}
