@@ -21,7 +21,7 @@ function addColor() {
 
     let removeButtonCell = row.insertCell(-1)
     let removeButton = document.createElement('button')
-    removeButton.innerHTML = 'X'
+    removeButton.innerHTML = '-'
     removeButton.classList.add('delete-button')
     removeButton.addEventListener('mouseup', removeColor)
     removeButtonCell.appendChild(removeButton)

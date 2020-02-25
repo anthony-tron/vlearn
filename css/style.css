@@ -112,8 +112,17 @@ button:active {
 }
 
 button, .button-like {
+    display: inline-block;
     font-family: comfortaa;
     font-size: 14px;
+}
+
+input[type="text"] {
+    padding-left: 4px;
+}
+
+input[type="checkbox"] {
+    display: inline;
 }
 
 .add-button {
@@ -191,7 +200,7 @@ input[type="color"]:hover {
         font-size: 40px;
     }
 
-    body, p, .sub, button {
+    body, p, .sub, button, .button-like {
         font-size: 28px;
     }
 
@@ -215,3 +224,28 @@ input[type="color"]:hover {
     }
 }
 
+li a > * {
+    display: inline;
+}
+
+.output-buttons {
+    display: inline-flex;
+}
+
+.output-buttons > * {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.icon {
+    width: 16px;
+}
+
+
+thead tr {
+    background-color: #eee;
+}
+
+.inline {
+    display: inline;
+}

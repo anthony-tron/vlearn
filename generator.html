@@ -21,7 +21,12 @@
 
             <p class="sub">Tools</p>
             <ul>
-                <li><strong>Flashcard generator</strong></li>
+                <li>
+                    <a href="">
+                        <img src="./res/lightbulb-colored.png" alt=""/>
+                        <p><strong>Flashcard generator</strong></p>
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -54,26 +59,34 @@
             </div>
 
             <div class="output-settings">
-                <h2>Output settings</h2>
+                <h2>Output settings <img src="res/adjust.png" alt=""> </h2>
 
                 <table>
                     <tr>
-                        <td><label for="width-selector">Width</label></td>
-                        <td><input name="width-selector" id="width-selector" value="476" min="48" max="10000" type="number"/></td>
+                        <td>
+                            <label for="width-selector" class="inline"><img src="res/width.png" alt="Width"/></label>
+                        </td>
+                        <td>
+                            <input name="width-selector" id="width-selector" value="476" min="48" max="10000" type="number"/>
+                        </td>
                     </tr>
                     
                     <tr>
-                        <td><label for="height-selector">Height</label></td>
-                        <td><input name="height-selector" id="height-selector" value="556" min="48" max="10000" type="number"/></td>
+                        <td>
+                            <label for="height-selector" class="inline"><img src="res/height.png" alt="Height"/></label>
+                        </td>
+                        <td>
+                            <input name="height-selector" id="height-selector" value="556" min="48" max="10000" type="number"/>
+                        </td>
                     </tr>
                 </table>
             </div>
 
 
             <div class="color-table-div">
-                <h2>Color table</h2>
+                <h2>Color table <img src="res/color-palette.png" alt=""> </h2>
                 <p>Random colors to choose from.</p>
-                <button class="rounded add-button" onclick="addColor()">Add a color</button>
+                <button class="rounded add-button" onclick="addColor()">Add <img src="res/more.png" alt=""> </button>
 
                 <table id="color-table">
                     <tr>
@@ -85,13 +98,18 @@
             <div class="output">
                 <h2>Output</h2>
 
-                <button onclick="generate()" class="rounded">Generate</button>
-                <button onclick="downloadAll('canvas-area')" class="rounded">Download all</button>
+                <div class="output-buttons">
+                    <button onclick="generate()" class="rounded"><img src="res/lightbulb-white.png" alt=""> Generate</button>
+                    <button onclick="downloadAll('canvas-area')" class="rounded"><img src="res/downward.png" alt=""> Download all</button>
+    
+                    <label for="numerate" class="rounded button-like">
+                        <img src="res/123-numbers.png" alt="" class="icon">
+                        Numerate files?
+                        <input id="numerate" type="checkbox"/>
+                    </label>
+                </div>
 
-                <label for="numerate" class="rounded button-like">
-                    Numerate files?
-                    <input id="numerate" type="checkbox"/>
-                </label>
+                
                 
 
                 <p id="info-giver">No flashcards generated yet.</p>

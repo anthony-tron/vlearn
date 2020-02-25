@@ -72,8 +72,8 @@ canvas:hover {
     max-width: 160px;
 }
 
-.custom-color-cell {
-    padding: 0px 16px;
+thead > tr > th {
+    padding: 4px 16px;
 }
 
 @media(max-width: 1000px) {
