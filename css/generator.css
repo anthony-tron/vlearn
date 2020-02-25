@@ -75,3 +75,9 @@ canvas:hover {
 .custom-color-cell {
     padding: 0px 16px;
 }
+
+@media(max-width: 1000px) {
+    .entries input, input {
+        font-size: 28px;
+    }
+}

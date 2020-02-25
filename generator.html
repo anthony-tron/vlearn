@@ -73,7 +73,7 @@
             <div class="color-table-div">
                 <h2>Color table</h2>
                 <p>Random colors to choose from.</p>
-                <button class="add-button" onclick="addColor()">Add a color</button>
+                <button class="rounded add-button" onclick="addColor()">Add a color</button>
 
                 <table id="color-table">
                     <tr>
@@ -84,8 +84,15 @@
 
             <div class="output">
                 <h2>Output</h2>
-                <button onclick="generate()">Generate</button>
-                <button onclick="downloadAll('canvas-area')">Download all</button>
+
+                <button onclick="generate()" class="rounded">Generate</button>
+                <button onclick="downloadAll('canvas-area')" class="rounded">Download all</button>
+
+                <label for="numerate" class="rounded button-like">
+                    Numerate files?
+                    <input id="numerate" type="checkbox"/>
+                </label>
+                
 
                 <p id="info-giver">No flashcards generated yet.</p>
 

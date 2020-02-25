@@ -30,7 +30,7 @@ function generate() {
         infoGiver.innerHTML = 'You have no flashcards to generate.'
         return
     }
-
+    
     let numberGenerated = 0
     let numberToGenerate = 0
 
@@ -69,8 +69,8 @@ function generate() {
 
         canvas.width = widthSelector.value
         canvas.height = heightSelector.value
-        canvas.name = kanji
         canvas.title = 'Click to download'
+        canvas.name = kanji
 
         let checkbox = allEntries[i+2]
         let flashcardColor
@@ -88,8 +88,7 @@ function generate() {
 
             canvas.addEventListener('mouseup', function (event) {
                 if (event.button == 0) { // left click
-                    let img = canvas.toDataURL('image/png')
-                    saveAs(img, kanji+'.png')
+                    downloadCanvasAsPNG(canvas)
                 }
             })
 
@@ -117,10 +116,12 @@ function drawFlashcard(canvas, info, options) {
 
     context.font = options.kanjiSize + ' ' + options.fontFamily
     context.textAlign = 'center'
+    context.textBaseline = 'middle'
     context.fillStyle = '#ffffff'
     context.fillText(info.kanji, canvas.width/2, canvas.height/2)
 
     context.font = options.readingSize + ' ' + options.fontFamily
+    context.textBaseline = 'top'
     context.fillText(info.reading, canvas.width/2, canvas.height/2 + 100)
 
     return true

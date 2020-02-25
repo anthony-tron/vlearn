@@ -88,13 +88,15 @@ h1, h2 {
     font-weight: bold;
 }
 
+.rounded {
+    border-radius: 7px;
+    padding: 7px;
+}
+
 button {
     background-color: #009fb7;
     color: white;
     border: none;
-    padding: 7px;
-    border-radius: 5px;
-    font-size: 14px;
     transition: background-color;
     transition-duration: 100ms;
 }
@@ -109,6 +111,11 @@ button:active {
     background-color: #58cee0;
 }
 
+button, .button-like {
+    font-family: comfortaa;
+    font-size: 14px;
+}
+
 .add-button {
     background-color: #696773;
 }
@@ -118,9 +125,23 @@ button:active {
     background-color: #696773;
     width: 24px;
     height: 24px;
-    font-size: 10px;
     vertical-align: center;
     text-align: center;
+}
+
+
+.button-like {
+    background-color: #ccc;
+    transition: background-color 0.15s;
+    transition: color 0.15s;
+}
+
+.button-like:hover {
+    background-color: #bbb;
+}
+
+.button-like:hover {
+    cursor: pointer;
 }
 
 :focus {outline: none;}
@@ -156,3 +177,41 @@ input[type="color"]:hover {
         position: static;
     }
 }
+
+@media(max-width: 1000px) {
+    h1 {
+        font-size: 54px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    .home-link {
+        font-size: 40px;
+    }
+
+    body, p, .sub, button {
+        font-size: 28px;
+    }
+
+    input[type="color"] {
+        background: none;
+        border: none;
+        width: 128px;
+        height: 64px;
+    }
+
+    .delete-button {
+        width: 64px;
+        height: 64px;
+    }
+
+    nav, main {
+        border-radius: 0%;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100vw;
+    }
+}
+
