@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Guess what | vlearn</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/generator.css" />
+
+    <meta name="description" content="Write and export flashcards to PNG." />
+    <meta name="keywords" content="flashcards, generator, images" />
+</head>
+
+<body>
+    <nav>
+        <p class="home-link"><a href="index.html">vlearn</a></p>
+
+        <p class="sub">Games</p>
+        <ul>
+            <li>
+                <a href="guess-what.html">
+                    <img class="icon" src="./res/guess-what.png" alt="" />
+                    <p><strong>Guess what</strong></p>
+                </a>
+            </li>
+        </ul>
+
+        <p class="sub">Tools</p>
+        <ul>
+            <li>
+                <a href="generator.html">
+                    <img src="./res/lightbulb-colored.png" alt="" />
+                    <p>Flashcard generator</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Guess what</h1>
+
+        <div class="container">
+            <p class="text-center" name="instructions" id="instructions">The game will begin soon...</p>
+
+            <div class="container">
+
+                <div class="relative container">
+                    <input class="text-center rounded bigger-input no-margin" type="text" name="user-input"
+                        id="user-input">
+                    <div id="indicator" class="no-margin"></div>
+                </div>
+
+                <div class="inline">
+                    <button class="primary rounded-left button bigger-input" id="validate-button"
+                        title="You can also press [Enter] to validate">Validate</button>
+                    <button class="secondary rounded-right button bigger-input" id="idk-button">I don't know</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="voc-nav" class="hidden container no-margin">
+            <!-- Previous | Next -->
+            <div class="inline self-center">
+                <button id="previous-button"
+                    class="prev-next-width secondary rounded-left fit button border-right">Previous</button>
+                <button id="next-button" class="prev-next-width secondary rounded-right fit button">Next</button>
+            </div>
+
+            <!-- Voc Helper -->
+            <div id="voc-helper" class="container">
+                <!-- Word -->
+                <!-- Reading -->
+                <div class="word-reading-header">
+                    <h2 class="word text-center rounded-top" id="word"></h2>
+                    <h3 class="reading text-center" id="reading"></h3>
+                </div>
+
+                <!-- List of meanings -->
+                <ul id="definitions"></ul>
+
+                <!-- Remember? -->
+                <label for="remember-checkbox"><small>Remember?</small>
+                    <input type="checkbox" name="remember-checkbox" id="remember-checkbox" />
+                </label>
+
+                <!-- Links -->
+                <div class="inline spaced rounded-bottom">
+                    <small><a id="jisho-link" target="_blank" href="">Search on <i>jisho.org</i></a></small>
+                    <small><a id="google-image-link" target="_blank" href="">Search on <i>Google Images</i></a></small>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+</body>
+
+<script src="js/japanese/Voc.js"></script>
+<script src="js/japanese/VocUtils.js"></script>
+
+<script src="js/guessWhat/localStorage.js"></script>
+<script src="js/guessWhat/pick.js"></script>
+<script src="js/guessWhat/ui.js"></script>
+<script src="js/guessWhat/main.js"></script>
+
+<script>console.log('Remember to clear cache with ctrl+F5!')</script>
+
+</html>
