@@ -60,7 +60,7 @@ main, nav {
 
 
 main > div {
-    margin: 32px 2px;
+    margin: 24px 2px;
 }
 
 h1 {
@@ -88,10 +88,6 @@ h1, h2 {
     font-weight: bold;
 }
 
-.rounded {
-    border-radius: 7px;
-    padding: 7px;
-}
 
 button {
     background-color: #009fb7;
@@ -108,7 +104,7 @@ button:hover {
 }
 
 button:active {
-    background-color: #58cee0;
+    background-color: #50c1d3;
 }
 
 button, .button-like {
@@ -119,6 +115,7 @@ button, .button-like {
 
 input[type="text"] {
     padding-left: 4px;
+    font-family: comfortaa;
 }
 
 input[type="checkbox"] {
@@ -158,17 +155,8 @@ input[type="checkbox"] {
 
 
 
-input:focus {
-    border-color: #e4c25b;
-}
 
-.invisible {
-    visibility: hidden;
-}
 
-.hidden {
-    display: none;
-}
 
 input[type="color"] {
     background: none;
@@ -180,6 +168,231 @@ input[type="color"] {
 input[type="color"]:hover {
     cursor: pointer;
 }
+
+
+li a > * {
+    display: inline;
+}
+
+.output-buttons {
+    display: inline-flex;
+}
+
+.output-buttons > * {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.icon {
+    width: 16px;
+}
+
+
+thead tr {
+    background-color: #eee;
+}
+
+.inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.inline > * {
+    width: 100%;
+}
+
+.bigger-input {
+    padding: 8px;
+    font-size: 16pt;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container > * {
+    margin: 10px;
+}
+
+.button {
+    padding: 8px;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+button.secondary {
+    background-color: #444;
+    color: #eee;
+}
+
+button.secondary:hover {
+    background-color: #222;
+}
+
+button.secondary:active {
+    background-color: #555;
+}
+
+.inline.spaced > * {
+    margin: 4px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#voc-helper {
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.word {
+    font-size: 32pt;
+    font-weight: normal;
+}
+
+.reading {
+    font-weight: normal;
+    font-size: 16pt;
+    padding: 2px;
+}
+
+.word-reading-header .word {
+    margin: 0;
+
+    background-color: #444;
+    color: #eee;
+}
+
+.word-reading-header .reading {
+    margin: 0;
+    background-color: #666;
+    color: #ddd;
+}
+
+.word-reading-header {
+    margin: 0;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+input[type="text"].rounded {
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.rounded-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.rounded-bottom {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.rounded-left {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.rounded-right {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#voc-helper {
+    background-color: #f3f3f3;
+}
+
+.shake {
+    animation: shake-animation 400ms ease-in-out;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.relative {
+    position: relative;
+}
+
+#indicator {
+    color: #c51a1a;
+    font-size: 12pt;
+    position: absolute;
+    top: -16pt;
+    right: 0;
+}
+
+.fit {
+    width: fit-content;
+    height: fit-content;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.border-right {
+    border-right: 1px solid #bbb;
+}
+
+.prev-next-width {
+    width: 96px;
+}
+
+@keyframes shake-animation {
+    0% {
+        transform: translateX(0px);
+    }
+    10% {
+        transform: translateX(20px);
+    }
+    20% {
+        transform: translateX(-20px);
+    }
+    30% {
+        transform: translateX(15px);
+    }
+    40% {
+        transform: translateX(-15px);
+    }
+    50% {
+        transform: translateX(12px);
+    }
+    60% {
+        transform: translateX(-12px);
+    }
+    70% {
+        transform: translateX(9px);
+    }
+    80% {
+        transform: translateX(-9px);
+    }
+    90% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
 
 @media(max-width: 1400px) {
     nav {
@@ -217,35 +430,19 @@ input[type="color"]:hover {
     }
 
     nav, main {
+        max-width: none;
+        padding: 0;
         border-radius: 0%;
         margin-left: 0px;
         margin-right: 0px;
-        width: 100vw;
+    }
+
+    .prev-next-width {
+        width: 160px;
     }
 }
 
-li a > * {
-    display: inline;
-}
-
-.output-buttons {
-    display: inline-flex;
-}
-
-.output-buttons > * {
-    margin-left: 2px;
-    margin-right: 2px;
-}
-
-.icon {
+.icon-16 {
     width: 16px;
-}
-
-
-thead tr {
-    background-color: #eee;
-}
-
-.inline {
-    display: inline;
+    height: 16px;
 }

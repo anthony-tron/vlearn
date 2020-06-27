@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Flashcard generator | vlearn</title>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="css/generator.css"/>
 
-        <meta name="description" content="Write and export flashcards to PNG."/>
-        <meta name="keywords" content="flashcards, generator, images"/>
-    </head>
+<head>
+    <title>Flashcard generator | vlearn</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/generator.css" />
 
-    <body>
-        <nav>
-            <p class="home-link"><a href="index.html">vlearn</a></p>
+    <meta name="description" content="Write and export flashcards to PNG." />
+    <meta name="keywords" content="flashcards, generator, images" />
+</head>
 
-            <p class="sub">Games</p>
-            <ul>
-                <li>incoming...</li>
-            </ul>
+<body>
+    <nav>
+        <p class="home-link"><a href="index.html">vlearn</a></p>
 
-            <p class="sub">Tools</p>
-            <ul>
-                <li>
-                    <a href="">
-                        <img src="./res/lightbulb-colored.png" alt=""/>
-                        <p><strong>Flashcard generator</strong></p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <p class="sub">Games</p>
+        <ul>
+            <li>
+                <a href="guess-what.html">
+                    <img class="icon" src="./res/guess-what.png" alt="" />
+                    <p>Guess what</p>
+                </a>
+            </li>
+        </ul>
 
-        <main>
-            <h1>Multi Flashcard Generator</h1>
-            
-            <div>
-                <h2>Flashcard content</h2>
-                <div class="flashcard-info">
-                    <table id="entries" class="entries">
-                        <thead>
-                            <tr>
-                                <th class="entry-cell">Kanji</th>
-                                <th class="entry-cell">Reading</th>
-                                <th class="custom-color-cell">Custom color?</th>
-                                <th>Color</th>
-                            </tr>
-                        </thead>
+        <p class="sub">Tools</p>
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./res/lightbulb-colored.png" alt="" />
+                    <p><strong>Flashcard generator</strong></p>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
+    <main>
+        <h1>Multi Flashcard Generator</h1>
+
+        <div>
+            <h2>Flashcard content</h2>
+            <div class="flashcard-info">
+                <table id="entries" class="entries">
+                    <thead>
                         <tr>
-                            <td><input id="last" onchange="addRow()" placeholder="Kanji" value="" type="text"></td>
-                            <td><input placeholder="Reading" value="" type="text"></td>
-
-                            <td><input onclick="hideColorPicker(event)" type="checkbox"></td>
-
-                            <td><input class="invisible" type="color"></td>
+                            <th class="entry-cell">Kanji</th>
+                            <th class="entry-cell">Reading</th>
+                            <th class="custom-color-cell">Custom color?</th>
+                            <th>Color</th>
                         </tr>
-                    </table>
-                </div>
-            </div>
+                    </thead>
 
-            <div class="output-settings">
-                <h2>Output settings <img src="res/adjust.png" alt=""> </h2>
+                    <tr>
+                        <td><input id="last" onchange="addRow()" placeholder="Kanji" value="" type="text"></td>
+                        <td><input placeholder="Reading" value="" type="text"></td>
 
-                <table>
-                    <tr>
-                        <td>
-                            <label for="width-selector" class="inline"><img src="res/width.png" alt="Width"/></label>
-                        </td>
-                        <td>
-                            <input name="width-selector" id="width-selector" value="476" min="48" max="10000" type="number"/>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <label for="height-selector" class="inline"><img src="res/height.png" alt="Height"/></label>
-                        </td>
-                        <td>
-                            <input name="height-selector" id="height-selector" value="556" min="48" max="10000" type="number"/>
-                        </td>
+                        <td><input onclick="hideColorPicker(event)" type="checkbox"></td>
+
+                        <td><input class="invisible" type="color"></td>
                     </tr>
                 </table>
             </div>
+        </div>
+
+        <div class="output-settings">
+            <h2>Output settings <img src="res/adjust.png" alt=""> </h2>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="width-selector" class="inline"><img src="res/width.png" alt="Width" /></label>
+                    </td>
+                    <td>
+                        <input name="width-selector" id="width-selector" value="476" min="48" max="10000"
+                            type="number" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="height-selector" class="inline"><img src="res/height.png" alt="Height" /></label>
+                    </td>
+                    <td>
+                        <input name="height-selector" id="height-selector" value="556" min="48" max="10000"
+                            type="number" />
+                    </td>
+                </tr>
+            </table>
+        </div>
 
 
-            <div class="color-table-div">
-                <h2>Color table <img src="res/color-palette.png" alt=""> </h2>
-                <p>Random colors to choose from.</p>
-                <button class="rounded add-button" onclick="addColor()">Add <img src="res/more.png" alt=""> </button>
+        <div class="color-table-div">
+            <h2>Color table <img src="res/color-palette.png" alt=""> </h2>
+            <p>Random colors to choose from.</p>
+            <button class="rounded add-button" onclick="addColor()">Add <img src="res/more.png" alt=""> </button>
 
-                <table id="color-table">
-                    <tr>
-                        <td><input type="color" value="#f1bc31"/></td>
-                    </tr>
-                </table>
+            <table id="color-table">
+                <tr>
+                    <td><input type="color" value="#f1bc31" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="output">
+            <h2>Output</h2>
+
+            <div class="output-buttons">
+                <button onclick="generate()" class="rounded"><img src="res/lightbulb-white.png" alt="">
+                    Generate</button>
+                <button onclick="downloadAll('canvas-area')" class="rounded"><img src="res/downward.png" alt="">
+                    Download all</button>
+
+                <label for="numerate" class="rounded button-like">
+                    <img src="res/123-numbers.png" alt="" class="icon">
+                    Numerate files?
+                    <input id="numerate" type="checkbox" />
+                </label>
             </div>
 
-            <div class="output">
-                <h2>Output</h2>
 
-                <div class="output-buttons">
-                    <button onclick="generate()" class="rounded"><img src="res/lightbulb-white.png" alt=""> Generate</button>
-                    <button onclick="downloadAll('canvas-area')" class="rounded"><img src="res/downward.png" alt=""> Download all</button>
-    
-                    <label for="numerate" class="rounded button-like">
-                        <img src="res/123-numbers.png" alt="" class="icon">
-                        Numerate files?
-                        <input id="numerate" type="checkbox"/>
-                    </label>
-                </div>
 
-                
-                
 
-                <p id="info-giver">No flashcards generated yet.</p>
+            <p id="info-giver">No flashcards generated yet.</p>
 
-                <div id="canvas-area"></div>
-            </div>
-        </main> 
+            <div id="canvas-area"></div>
+        </div>
+    </main>
 
-        <script src="js/filesaver.js"></script>
-        <script src="js/jszip.js"></script>
-        <script src="js/download.js"></script>
-        <script src="js/list-generator.js"></script>
-        <script src="js/events.js"></script>
-    </body>
+    <script src="js/filesaver.js"></script>
+    <script src="js/jszip.js"></script>
+    <script src="js/download.js"></script>
+    <script src="js/list-generator.js"></script>
+    <script src="js/events.js"></script>
+</body>
+
 </html>
