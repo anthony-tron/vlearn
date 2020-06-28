@@ -413,6 +413,10 @@ input[type="text"].rounded {
         height: 64px;
     }
 
+    input[type="text"] {
+        font-size: 1.3em;
+    }
+
     .delete-button {
         width: 64px;
         height: 64px;
