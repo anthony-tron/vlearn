@@ -1,3 +1,7 @@
+html {
+    font-size: 1.2em;
+}
+
 @font-face {
     font-family: comfortaa;
     src: url("../font/Comfortaa-Regular.ttf");
@@ -79,13 +83,17 @@ h1, h2 {
 
 
 .home-link {
-    font-size: 24px;
+    font-size: 1.75em;
     text-align: center;
 }
 
 .sub {
-    font-size: 16px;
+    font-size: 1.5em;
     font-weight: bold;
+}
+
+nav a {
+    font-size: 1.25em;
 }
 
 
@@ -110,7 +118,6 @@ button:active {
 button, .button-like {
     display: inline-block;
     font-family: comfortaa;
-    font-size: 14px;
 }
 
 input[type="text"] {
@@ -203,7 +210,7 @@ thead tr {
 
 .bigger-input {
     padding: 8px;
-    font-size: 16pt;
+    font-size: 1.75em;
 }
 
 .text-center {
@@ -220,6 +227,7 @@ thead tr {
 }
 
 .button {
+    font-size: 1.4em;
     padding: 8px;
 }
 
@@ -260,13 +268,13 @@ main {
 }
 
 .word {
-    font-size: 32pt;
+    font-size: 2.25em;
     font-weight: normal;
 }
 
 .reading {
     font-weight: normal;
-    font-size: 16pt;
+    font-size: 1.5em;
     padding: 2px;
 }
 
@@ -334,7 +342,7 @@ input[type="text"].rounded {
 
 #indicator {
     color: #c51a1a;
-    font-size: 12pt;
+    font-size: 0.75em;
     position: absolute;
     top: -16pt;
     right: 0;
@@ -354,7 +362,7 @@ input[type="text"].rounded {
 }
 
 .prev-next-width {
-    width: 96px;
+    width: 5em;
 }
 
 @keyframes shake-animation {
@@ -400,22 +408,7 @@ input[type="text"].rounded {
     }
 }
 
-@media(max-width: 1000px) {
-    h1 {
-        font-size: 54px;
-    }
-
-    h2 {
-        font-size: 42px;
-    }
-
-    .home-link {
-        font-size: 40px;
-    }
-
-    body, p, .sub, button, .button-like {
-        font-size: 28px;
-    }
+@media(max-device-width: 1000px) {
 
     input[type="color"] {
         background: none;
@@ -436,13 +429,18 @@ input[type="text"].rounded {
         margin-left: 0px;
         margin-right: 0px;
     }
-
-    .prev-next-width {
-        width: 160px;
-    }
 }
 
 .icon-16 {
     width: 16px;
     height: 16px;
+}
+
+.centered {
+    align-items: center;
+}
+
+button {
+    font-size: 1em;
+    padding: 0.3em;
 }

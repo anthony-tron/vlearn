@@ -5,7 +5,6 @@
     <title>Flashcard generator | vlearn</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/generator.css" />
 
     <meta name="description" content="Write and export flashcards to PNG." />
     <meta name="keywords" content="flashcards, generator, images" />
@@ -41,8 +40,8 @@
 
         <div>
             <h2>Flashcard content</h2>
-            <div class="flashcard-info">
-                <table id="entries" class="entries">
+            <div class="container flashcard-info">
+                <table id="entries" class="centered entries">
                     <thead>
                         <tr>
                             <th class="entry-cell">Kanji</th>
@@ -64,7 +63,7 @@
             </div>
         </div>
 
-        <div class="output-settings">
+        <div class="centered container output-settings">
             <h2>Output settings <img src="res/adjust.png" alt=""> </h2>
 
             <table>
@@ -91,10 +90,11 @@
         </div>
 
 
-        <div class="color-table-div">
+        <div class="centered container color-table-div">
             <h2>Color table <img src="res/color-palette.png" alt=""> </h2>
             <p>Random colors to choose from.</p>
-            <button class="rounded add-button" onclick="addColor()">Add <img src="res/more.png" alt=""> </button>
+            <button class="rounded secondary" onclick="addColor()">Add <img src="res/more.png" alt="">
+            </button>
 
             <table id="color-table">
                 <tr>
@@ -103,7 +103,7 @@
             </table>
         </div>
 
-        <div class="output">
+        <div class="centered container output">
             <h2>Output</h2>
 
             <div class="output-buttons">
