@@ -1,7 +1,3 @@
-html {
-    font-size: 1.2em;
-}
-
 @font-face {
     font-family: comfortaa;
     src: url("../font/Comfortaa-Regular.ttf");
@@ -83,17 +79,17 @@ h1, h2 {
 
 
 .home-link {
-    font-size: 1.75em;
+    font-size: 1.5em;
     text-align: center;
 }
 
 .sub {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
 nav a {
-    font-size: 1.25em;
+    font-size: 1.1em;
 }
 
 
@@ -209,8 +205,8 @@ thead tr {
 }
 
 .bigger-input {
-    padding: 8px;
-    font-size: 1.75em;
+    padding: 0.3em;
+    font-size: 1.25em;
 }
 
 .text-center {
@@ -226,10 +222,6 @@ thead tr {
     margin: 10px;
 }
 
-.button {
-    font-size: 1.4em;
-    padding: 8px;
-}
 
 .invisible {
     visibility: hidden;
@@ -411,7 +403,7 @@ input[type="text"].rounded {
 @media(max-device-width: 1000px) {
 
     html {
-        font-size: 1.75em;
+        font-size: 2em;
     }
 
     input[type="color"] {
