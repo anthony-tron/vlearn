@@ -410,6 +410,10 @@ input[type="text"].rounded {
 
 @media(max-device-width: 1000px) {
 
+    html {
+        font-size: 1.75em;
+    }
+
     input[type="color"] {
         background: none;
         border: none;
@@ -444,3 +448,4 @@ button {
     font-size: 1em;
     padding: 0.3em;
 }
+
