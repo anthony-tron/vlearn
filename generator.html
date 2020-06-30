@@ -5,6 +5,7 @@
     <title>Flashcard generator | vlearn</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/generator.css">
 
     <meta name="description" content="Write and export flashcards to PNG." />
     <meta name="keywords" content="flashcards, generator, images" />
@@ -47,7 +48,7 @@
 
         <div>
             <h2>Flashcard content</h2>
-            <div class="container flashcard-info">
+            <div class="container flashcard-info scrollable-x">
                 <table id="entries" class="centered entries">
                     <thead>
                         <tr>
@@ -62,7 +63,9 @@
                         <td><input id="last" onchange="addRow()" placeholder="Kanji" value="" type="text"></td>
                         <td><input placeholder="Reading" value="" type="text"></td>
 
-                        <td><input onclick="hideColorPicker(event)" type="checkbox"></td>
+                        <td>
+                            <input onclick="hideColorPicker(event)" type="checkbox">
+                        </td>
 
                         <td><input class="invisible" type="color"></td>
                     </tr>

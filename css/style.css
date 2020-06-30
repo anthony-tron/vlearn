@@ -22,10 +22,13 @@ body {
 }
 
 nav {
+    display: flex;
+    flex-direction: column;
+
     top: 0;
     left: 0;
+    padding: 1em;
     position: fixed;
-    padding: 8px;
     margin: 16px;
     border-radius: 16px;
 
@@ -53,11 +56,6 @@ main {
     background-color: #fcfcfc;
     border-radius: 24px;
 }
-
-main, nav {
-    display: block;
-}
-
 
 main > div {
     margin: 24px 2px;
@@ -287,33 +285,35 @@ main {
     margin: 0;
 }
 
-.rounded {
-    border-radius: 10px;
-}
 
-input[type="text"].rounded {
-    border-radius: 10px;
+
+input[type="text"] {
     border: 1px solid #444;
 }
 
+.rounded {
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
 .rounded-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 .rounded-bottom {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .rounded-left {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
 }
 
 .rounded-right {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 #voc-helper {
@@ -324,9 +324,6 @@ input[type="text"].rounded {
     animation: shake-animation 400ms ease-in-out;
 }
 
-.no-margin {
-    margin: 0;
-}
 
 .relative {
     position: relative;
@@ -394,6 +391,83 @@ input[type="text"].rounded {
 }
 
 
+
+.icon-16 {
+    width: 16px;
+    height: 16px;
+}
+
+.centered {
+    align-items: center;
+}
+
+button {
+    font-size: 1em;
+    padding: 0.3em;
+}
+
+
+.japanese-word-entry {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    background-color: #eee;
+}
+
+.japanese-word-entry > li {
+    padding: 0.75em;
+    display: flex;
+    align-items: center;
+
+    border: 2px solid white;
+}
+
+.japanese-word-entry > li.word {
+    font-size: 1em;
+    color: black;
+    width: 20%;
+}
+
+.japanese-word-entry > li.word.two-cells {
+    width: 50%; /* 20% + 30% */
+}
+
+.japanese-word-entry > li.reading {
+    font-size: 1em;
+    color: #333;
+    width: 25%;
+}
+
+.japanese-word-entry > li.meanings {
+    width: 40%;
+}
+
+.japanese-word-entry > li.delete-entry-button {
+    width: 10%;
+}
+
+
+
+
+
+.unstyled-list {
+    list-style: none;
+    padding: 0;
+}
+
+.vertically-spaced {
+    display: flex;
+    flex-direction: column;
+}
+.vertically-spaced > * {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+
 @media(max-width: 1400px) {
     nav {
         position: static;
@@ -413,8 +487,9 @@ input[type="text"].rounded {
         height: 64px;
     }
 
-    input[type="text"] {
+    input[type="text"], input[type="number"] {
         font-size: 1.3em;
+        padding: 0.3em;
     }
 
     .delete-button {
@@ -424,24 +499,49 @@ input[type="text"].rounded {
 
     nav, main {
         max-width: none;
-        padding: 0;
         border-radius: 0%;
         margin-left: 0px;
         margin-right: 0px;
     }
+
+    body {
+        margin: 0;
+    }
+
+    nav {
+        margin-top: 0;
+    }
+
+    .japanese-word-entry {
+        flex-direction: column;
+    }
+
+    .japanese-word-entry > li {
+        width: 100% !important;
+    }
 }
 
-.icon-16 {
-    width: 16px;
-    height: 16px;
+
+.no-margin {
+    margin: 0;
 }
 
-.centered {
-    align-items: center;
+.no-padding {
+    padding: 0 !important;
 }
 
-button {
-    font-size: 1em;
-    padding: 0.3em;
+.full-width {
+    width: 100%;
 }
 
+.full-height {
+    height: 100%;
+}
+
+.scrollable-x {
+    overflow-x: auto;
+}
+
+.entries th {
+    background: #eee;
+}

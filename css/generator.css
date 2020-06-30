@@ -26,11 +26,6 @@ canvas:hover {
 
 
 
-.entries {
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .entries > tr {
     font-family: appli-mincho;
@@ -55,29 +50,8 @@ canvas:hover {
     margin-right: auto;
 }
 
-#width-selector, #height-selector {
-    width: 72px;
-}
-
 .color-table-div > table {
     width: auto;
     margin-left: auto;
     margin-right: auto;
-}
-
-.entries input {
-    background-color: #fff;
-    border: 1px solid #aaa;
-    font-size: 16px;
-    max-width: 160px;
-}
-
-thead > tr > th {
-    padding: 4px 16px;
-}
-
-@media(max-width: 1000px) {
-    .entries input, input {
-        font-size: 28px;
-    }
 }
