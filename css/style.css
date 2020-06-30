@@ -225,9 +225,7 @@ button, input[type="text"] {
     visibility: hidden;
 }
 
-.hidden {
-    display: none;
-}
+
 
 button.secondary {
     background-color: #444;
@@ -467,6 +465,10 @@ button {
     margin-bottom: 0.3em;
 }
 
+input[type="checkbox"] {
+    min-width: 16px;
+    min-height: 16px;
+}
 
 @media(max-width: 1400px) {
     nav {
@@ -519,6 +521,16 @@ button {
     .japanese-word-entry > li {
         width: 100% !important;
     }
+
+    input[type="checkbox"] {
+        min-width:  36px;
+        min-height: 36px;
+    }
+
+    table.entries input[type="checkbox"] {
+        min-width:  54px;
+        min-height: 54px;
+    }
 }
 
 
@@ -544,4 +556,20 @@ button {
 
 .entries th {
     background: #eee;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.closed::after{
+    content: ' ▸';
+}
+
+.opened::after {
+    content: ' ▾'
+}
+
+.hidden {
+    display: none;
 }

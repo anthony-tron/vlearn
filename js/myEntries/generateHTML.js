@@ -29,7 +29,7 @@ function japaneseWordEntryGenerateHTML(word) {
     let deleteButtonHTML = document.createElement('button')
     deleteButtonHTML.classList.add('full-width', 'full-height')
     deleteButtonHTML.innerText = '⨯'
-    deleteButtonHTML.addEventListener('mouseup', () => onClickDeleteButton(main, word))
+    deleteButtonHTML.addEventListener('click', () => onClickDeleteButton(main, deleteButtonHTML), { once: true })
 
     let deleteButtonContainerHTML = document.createElement('li')
     deleteButtonContainerHTML.classList.add('no-padding', 'delete-entry-button')
@@ -37,6 +37,7 @@ function japaneseWordEntryGenerateHTML(word) {
 
     main = document.createElement('ul')
     main.classList.add('rounded', 'japanese-word-entry')
+    main.associatedWord = word
 
     if (word.reading)
         main.append(wordHTML, readingHTML, meaningsHTML, deleteButtonContainerHTML)
@@ -47,9 +48,46 @@ function japaneseWordEntryGenerateHTML(word) {
     return main
 }
 
-function onClickDeleteButton(mainParentToDelete, wordToDelete) {
-    mainParentToDelete.parentNode.parentNode.removeChild(mainParentToDelete.parentNode)
+function onClickDeleteButton(entryToDelete, refDeleteButton) {
+
+    deleteWordFromLocalStorage(entryToDelete.associatedWord)
+
+    let oldLi = removeHTML(entryToDelete.parentNode)
     // delete main li
 
-    deleteWordFromLocalStorage(wordToDelete)
+    _recycleBinEntries.appendChild(oldLi)
+
+    refDeleteButton.innerText = '↑'
+    refDeleteButton.addEventListener('click', () => onClickRecycleButton(entryToDelete, refDeleteButton), { once: true })
+
+    recycledEntriesCount++
+    updateCounter()
+}
+
+function onClickRecycleButton(entryToRecycle, refRecycleButton) {
+
+    saveWordInLocalStorage(entryToRecycle.associatedWord)
+
+    let oldLi = removeHTML(entryToRecycle.parentNode)
+
+    _entries.appendChild(oldLi)
+
+    refRecycleButton.innerText = '⨯'
+    refRecycleButton.addEventListener('click', () => onClickDeleteButton(entryToRecycle, refRecycleButton), { once: true })
+
+    recycledEntriesCount--
+    updateCounter()
+}
+
+function removeHTML(htmlElement) {
+    return htmlElement.parentNode.removeChild(htmlElement)
+    // litterally, asking his parent to remove him
+}
+
+function updateCounter() {
+    if (recycledEntriesCount == 0) {
+        _recyledEntriesCounter.innerText = ''
+    } else {
+        _recyledEntriesCounter.innerText = `(${recycledEntriesCount})`
+    }
 }
