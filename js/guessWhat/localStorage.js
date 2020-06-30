@@ -13,9 +13,7 @@ function deleteWordFromLocalStorage(word) {
     let allWords = wordsInLocalStorage()
     if (!allWords) return
 
-    allWords = allWords.filter(x => {
-        return x.word != word.word
-    })
+    allWords.splice(allWords.indexOf(word), 1)
 
     localStorage.setItem(KEY, JSON.stringify(allWords))
 }

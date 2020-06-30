@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Guess what | vlearn</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/generator.css" />
+
+    <meta name="description"
+        content="All the entries you've registered. On this page, you can review the words you've seen before and that you wanted to see again." />
+    <meta name="keywords" content="Memory, learn, revise" />
+</head>
+
+<body>
+    <nav>
+        <p class="home-link"><a href="index.html">vlearn</a></p>
+
+        <p class="sub">Games</p>
+        <ul>
+            <li>
+                <a href="guess-what.html">
+                    <img class="icon" src="./res/guess-what.png" alt="" />
+                    <p>Guess what</p>
+                </a>
+            </li>
+        </ul>
+
+        <p class="sub">Tools</p>
+        <ul>
+            <li>
+                <a href="generator.html">
+                    <img src="./res/lightbulb-colored.png" alt="" />
+                    <p>Flashcard generator</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="my-entries.html">
+                    <img class="icon" src="./res/book.png" alt="my-entries">
+                    <p><strong>My entries</strong></p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Your entries</h1>
+            <p class="text-center">All the words you have registered will appear here.</p>
+
+            <div class="hidden" id="no-entries-yet-container">
+                <p class="text-center">You have no registered entries yet.</p>
+                <p class="text-center">You can register words at <a href="./guess-what.html">the Guess What game</a>.
+                </p>
+            </div>
+
+            <ul id="entries" class="unstyled-list vertically-spaced">
+
+
+            </ul>
+
+
+        </div>
+
+
+    </main>
+</body>
+
+<script src="js/polyfill/Array.indexOf.js"></script>
+<script src="js/guessWhat/localStorage.js"></script>
+<script src="js/myEntries/generateHTML.js"></script>
+<script src="js/myEntries/main.js"></script>
+<script>console.log('Remember to clear cache with ctrl+F5!')</script>
+
+</html>
