@@ -21,25 +21,11 @@ let indexOfCurrentDisplayedWord
 let hasAlreadyClickedOnShowAnother
 
 _previousButton.addEventListener('mouseup', () => {
-    if (hasAlreadyClickedOnShowAnother) {
-        previousWord()
-    } else {
-        generateWordsToDisplay()
-    }
-
-    displayedWord = wordsToDisplay[indexOfCurrentDisplayedWord]
-    vocHelperUpdate(displayedWord)
+    onPreviousAction()
 })
 
 _nextButton.addEventListener('mouseup', () => {
-    if (hasAlreadyClickedOnShowAnother) {
-        nextWord()
-    } else {
-        generateWordsToDisplay()
-    }
-
-    displayedWord = wordsToDisplay[indexOfCurrentDisplayedWord]
-    vocHelperUpdate(displayedWord)
+    onNextAction()
 })
 
 
@@ -57,12 +43,56 @@ _idkButton.addEventListener('mouseup', () => {
     pickUpdateDisplay()
 })
 
-_rememberCheckbox.addEventListener('change', () => {
+_rememberCheckbox.addEventListener('change', onRememberAction)
+
+
+document.body.addEventListener('keyup', (event) => {
+
+    if (displayedWord) {
+        // on R
+        if (event.keyCode == 82) {
+            _rememberCheckbox.checked ^= 1
+            onRememberAction()
+        }
+
+        // on <-
+        else if (event.keyCode == 37)
+            onPreviousAction()
+
+        // on ->
+        else if (event.keyCode == 39)
+            onNextAction()
+    }
+})
+
+function onPreviousAction() {
+    if (hasAlreadyClickedOnShowAnother) {
+        previousWord()
+    } else {
+        generateWordsToDisplay()
+    }
+
+    displayedWord = wordsToDisplay[indexOfCurrentDisplayedWord]
+    vocHelperUpdate(displayedWord)
+}
+
+function onNextAction() {
+    if (hasAlreadyClickedOnShowAnother) {
+        nextWord()
+    } else {
+        generateWordsToDisplay()
+    }
+
+    displayedWord = wordsToDisplay[indexOfCurrentDisplayedWord]
+    vocHelperUpdate(displayedWord)
+}
+
+function onRememberAction() {
     if (_rememberCheckbox.checked)
         saveWordInLocalStorage(displayedWord)
     else
         deleteWordFromLocalStorage(displayedWord)
-})
+}
 
 function previousWord() {
     if (indexOfCurrentDisplayedWord == 0)
