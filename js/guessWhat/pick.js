@@ -47,14 +47,25 @@ function respectsRules(input, pick) { // -> boolean
 
 function pickInstructions(pick) {
     // TO CHANGE
+    let instructions
+
     switch (pick.rule.name) {
         case 'begin':
-            return 'Type a word that <strong>begins</strong> with ' + pick.character
+            instructions = 'Type a word that <strong>begins</strong> with ' + pick.character
+            break
         case 'end':
-            return 'Type a word that <strong>ends</strong> with ' + pick.character
+            instructions = 'Type a word that <strong>ends</strong> with ' + pick.character
+            break
         case 'contains':
-            return 'Type a word that <strong>contains</strong> ' + pick.character
+            instructions = 'Type a word that <strong>contains</strong> ' + pick.character
+            break
+        default: throw `I don't know this rule: ` + pick.rule.name
     }
+
+    if (pick.character == 'ー') instructions += ' (katakana)'
+    else if (pick.character == '一') instructions += ' (kanji)'
+
+    return instructions
 }
 
 function pickHint(pick) {

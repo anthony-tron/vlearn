@@ -82,6 +82,7 @@ function generateWordsToDisplay() {
     hasAlreadyClickedOnShowAnother = true
     indexOfCurrentDisplayedWord = 0
     wordsToDisplay = JpVoc.searchByReading(previousPick.character, 16, previousPick.rule.verify)
+    wordsToDisplay.push(displayedWord)
 }
 
 function onSuccess(userWord) {
