@@ -97,6 +97,9 @@ button {
     border: none;
     transition: background-color;
     transition-duration: 100ms;
+
+
+    touch-action: manipulation;
 }
 
 button:hover {
@@ -322,6 +325,11 @@ input[type="text"] {
     animation: shake-animation 400ms ease-in-out;
 }
 
+.grow-in-out-loop {
+    animation: grow-in-out-animation 1s ease-in ;
+    animation-iteration-count: infinite;
+}
+
 
 .relative {
     position: relative;
@@ -387,6 +395,22 @@ input[type="text"] {
         transform: translateX(-5px);
     }
 }
+
+@keyframes grow-in-out-animation {
+    0% {
+        transform: scale(1)
+    }
+    25% {
+        transform: scale(1.1)
+    }
+    75% {
+        transform: scale(0.9)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
 
 
 
@@ -534,6 +558,7 @@ input[type="checkbox"] {
 }
 
 
+
 .no-margin {
     margin: 0;
 }
@@ -572,4 +597,48 @@ input[type="checkbox"] {
 
 .hidden {
     display: none;
+}
+
+.salada-circle.main {
+    font-size: 1.5em;
+    padding: 0.3em;
+}
+
+.salada-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1em;
+    padding: 0.15em;
+    margin: 0.2em;
+    width: 3rem;
+    height: 3rem;
+
+    color: white;
+    background-color: #009fb7;
+    text-align: center;
+    border-radius: 100%;
+    border: 0.15em solid white;
+}
+
+.salada-circle.previous, .salada-circle.next {
+    opacity: 0.4;
+}
+
+#salada-circles-container {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.justify-center {
+    justify-content: center;
 }

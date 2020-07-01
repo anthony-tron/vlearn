@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Salada | vlearn</title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="Games and tools to improve your learning methods." />
+    <meta name="keywords" content="learn, language, education games, flashcards" />
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <nav>
+        <p class="home-link">vlearn</p>
+
+        <p class="sub">Games</p>
+        <ul>
+            <li>
+                <a href="guess-what.html">
+                    <img class="icon" src="./res/guess-what.png" alt="guess-what" />
+                    <p>Guess what</p>
+                </a>
+            </li>
+        </ul>
+
+        <p class="sub">Tools</p>
+        <ul>
+            <li>
+                <a href="generator.html">
+                    <img src="./res/lightbulb-colored.png" alt="generator" />
+                    <p>Flashcard generator</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="my-entries.html">
+                    <img class="icon" src="./res/book.png" alt="my-entries">
+                    <p>My entries</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Salada</h1>
+            <p class="text-center">To play, click on the character indicated by the big circle.</p>
+        </div>
+
+        <div class="container">
+
+            <button onClick="reset(12)">Play demo</button>
+            <button id="hint-button">Hint</button>
+        </div>
+
+        <div class=" container">
+            <div class="row justify-center">
+                <div id="previous-character" class="self-center previous salada-circle"></div>
+                <div id="current-character" class="self-center main salada-circle"></div>
+                <div id="next-character" class="self-center next salada-circle"></div>
+            </div>
+
+            <div id="salada-circles-container" class="container">
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="js/salada/utils.js"></script>
+<script src="js/salada/collisions.js"></script>
+<script src="js/salada/main.js"></script>
+
+</html>
