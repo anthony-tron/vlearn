@@ -20,6 +20,65 @@ let wordsToDisplay
 let indexOfCurrentDisplayedWord
 let hasAlreadyClickedOnShowAnother
 
+let swipeListener = new SwipeListener(_vocHelper)
+
+swipeListener.handleTouchStart = ((originPoint) => {
+    console.log('touchstart')
+    _vocHelper.style.transition = ''
+})
+
+swipeListener.handleTouchMove = (originPoint, lastPoint, distance) => {
+    _vocHelper.style.transform = `translateX(${-distance.x}px)`
+}
+
+swipeListener.handleTouchEnd = (originPoint, lastPoint, distance) => {
+    _vocHelper.style.transition = 'transform 200ms'
+
+    // Swiping right
+    if (distance.x < -200) {
+        _vocHelper.style.transform = `translateX(100vw)` // go right
+
+        wait(200).then(() => {
+            //_vocHelper.style.display = 'hidden'
+            _vocHelper.style.transition = ''
+            _vocHelper.style.transform = `translateX(-100vw)` // go left
+
+            wait(30).then(() => {
+                _vocHelper.style.transition = 'transform 200ms'
+                _vocHelper.style.transform = 'translateX(0)' // get back to normal
+
+                onNextAction()
+            })
+        })
+
+    }
+
+    else if (distance.x > 200) {
+        _vocHelper.style.transform = `translateX(-100vw)`
+
+        wait(200).then(() => {
+            //_vocHelper.style.display = 'hidden'
+            _vocHelper.style.transition = ''
+            _vocHelper.style.transform = `translateX(100vw)` // go left
+
+            wait(30).then(() => {
+                _vocHelper.style.transition = 'transform 200ms'
+                _vocHelper.style.transform = 'translateX(0)' // get back to normal
+
+                onPreviousAction()
+            })
+        })
+    } else {
+        _vocHelper.style.transform = 'translateX(0)'
+    }
+}
+
+function wait(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(), ms)
+    })
+}
+
 _previousButton.addEventListener('mouseup', () => {
     onPreviousAction()
 })
@@ -191,10 +250,16 @@ function pickUpdateDisplay() {
 }
 
 function playAnimationOn(htmlElement, animationClass, duration) {
-    if (htmlElement.classList.contains(animationClass))
-        htmlElement.classList.remove(animationClass)
+    return new Promise((resolve) => {
 
-    htmlElement.classList.add(animationClass)
+        if (htmlElement.classList.contains(animationClass))
+            htmlElement.classList.remove(animationClass)
 
-    setTimeout(() => htmlElement.classList.remove(animationClass), duration)
+        htmlElement.classList.add(animationClass)
+
+        setTimeout(() => {
+            htmlElement.classList.remove(animationClass)
+            resolve()
+        }, duration)
+    })
 }

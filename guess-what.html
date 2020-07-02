@@ -74,27 +74,30 @@
                 <button id="next-button" class="prev-next-width secondary rounded-right fit button">Next</button>
             </div>
 
-            <!-- Voc Helper -->
-            <div id="voc-helper" class="container">
-                <!-- Word -->
-                <!-- Reading -->
-                <div class="word-reading-header">
-                    <h2 class="word text-center rounded-top" id="word"></h2>
-                    <h3 class="reading text-center" id="reading"></h3>
-                </div>
+            <div class="no-padding no-margin overflow-hidden">
+                <!-- Voc Helper -->
+                <div id="voc-helper" class="container">
+                    <!-- Word -->
+                    <!-- Reading -->
+                    <div class="word-reading-header">
+                        <h2 class="word text-center rounded-top" id="word"></h2>
+                        <h3 class="reading text-center" id="reading"></h3>
+                    </div>
 
-                <!-- List of meanings -->
-                <ul id="definitions"></ul>
+                    <!-- List of meanings -->
+                    <ul id="definitions"></ul>
 
-                <!-- Remember? -->
-                <label for="remember-checkbox"><small>Remember?</small>
-                    <input type="checkbox" name="remember-checkbox" id="remember-checkbox" />
-                </label>
+                    <!-- Remember? -->
+                    <label for="remember-checkbox"><small>Remember?</small>
+                        <input type="checkbox" name="remember-checkbox" id="remember-checkbox" />
+                    </label>
 
-                <!-- Links -->
-                <div class="inline spaced rounded-bottom">
-                    <small><a id="jisho-link" target="_blank" href="">Search on <i>jisho.org</i></a></small>
-                    <small><a id="google-image-link" target="_blank" href="">Search on <i>Google Images</i></a></small>
+                    <!-- Links -->
+                    <div class="inline spaced rounded-bottom">
+                        <small><a id="jisho-link" target="_blank" href="">Search on <i>jisho.org</i></a></small>
+                        <small><a id="google-image-link" target="_blank" href="">Search on <i>Google
+                                    Images</i></a></small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,6 +108,9 @@
 
 <script src="js/japanese/Voc.js"></script>
 <script src="js/japanese/VocUtils.js"></script>
+
+
+<script src="js/SwipeListener.js"></script>
 
 <script src="js/guessWhat/localStorage.js"></script>
 <script src="js/guessWhat/pick.js"></script>

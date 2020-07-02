@@ -642,3 +642,7 @@ input[type="checkbox"] {
 .justify-center {
     justify-content: center;
 }
+
+.overflow-hidden {
+    overflow: hidden;
+}
