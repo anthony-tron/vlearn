@@ -1,5 +1,6 @@
 class SwipeListener {
     constructor(htmlElementToListen) {
+        this.preventScrolling = false
         this.listenedElement = htmlElementToListen
 
         this.listenedElement.addEventListener('touchstart', (e) => this._onTouchStart(e))
@@ -25,6 +26,9 @@ class SwipeListener {
     }
 
     _onTouchMove(event) {
+        if (this.preventScrolling && event.cancelable)
+            event.preventDefault()
+
         this.lastTouchPoint = this._extractTouchPoint(event)
         this.handleTouchMove(
             this.originPoint,
